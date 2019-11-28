@@ -8,3 +8,10 @@
 
 import Foundation
 
+protocol NetworkDataLoader {
+    // Question: What do we need for data in/data out?
+    // Need back : Data and Error
+    // Provide: URLRequest
+    
+    func loadData( with request: URLRequest, completion: @escaping (Data?, Error?) -> Void) 
+}

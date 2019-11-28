@@ -22,7 +22,10 @@ import XCTest
 class iTunes_SearchTests: XCTestCase {
     
     func testForSomeResults() {
-        let controller = SearchResultController()
+        let mock = MockDataLoader()
+        mock.data = goodResultsData
+        
+        let controller = SearchResultController(dataLoader: mock)
         let resultsExpectation = expectation(description: "Wait for results")
         
         controller.performSearch(for: "GarageBand", resultType: .software) {
@@ -30,7 +33,43 @@ class iTunes_SearchTests: XCTestCase {
         }
         
         wait(for: [resultsExpectation], timeout: 2)
-        XCTAssertTrue(controller.searchResults.count > 0, "Expecting at least one result for GarageBand")
+        // Now check results
+        XCTAssertTrue(controller.searchResults.count == 2, "Expecting two results for GarageBand")
+        XCTAssertEqual("GarageBand", controller.searchResults[0].title)
+        XCTAssertEqual("Apple", controller.searchResults[0].artist)
+    }
+    
+    func testBadResultData() {
+        let mock = MockDataLoader()
+        mock.data = badResultsData
+        
+        let controller = SearchResultController(dataLoader: mock)
+        let resultsExpectation = expectation(description: "Wait for search results")
+        
+        controller.performSearch(for: "GarageBand", resultType: .software) {
+            resultsExpectation.fulfill()
+        }
+        
+        wait(for: [resultsExpectation], timeout: 2)
+        // Now check results
+        XCTAssertTrue(controller.searchResults.count == 0, "Expecting nil result for GarageBand using bad data")
+        XCTAssertNotNil(controller.error)
+    }
+    
+    func testNoResult() {
+        let mock = MockDataLoader()
+        mock.data = noResultsData
+        
+        let controller = SearchResultController(dataLoader: mock)
+        let resultsExpectation = expectation(description: "Wait for search results")
+        
+        controller.performSearch(for: "asdfgh", resultType: .software) {
+            resultsExpectation.fulfill()
+        }
+        
+        wait(for: [resultsExpectation], timeout: 2)
+        XCTAssertTrue(controller.searchResults.count == 0, "Expecting no results for asdfgh")
+        XCTAssertNil(controller.error)
     }
     
 

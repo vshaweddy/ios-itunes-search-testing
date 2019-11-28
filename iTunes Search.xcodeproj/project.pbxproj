@@ -18,6 +18,9 @@
 		46BF02472117E37000A24DE5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF02462117E36F00A24DE5 /* HTTPMethod.swift */; };
 		E30C96C4238EC46A00EC3A9C /* iTunes_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C96C3238EC46A00EC3A9C /* iTunes_SearchTests.swift */; };
 		E30C96CD238ED15700EC3A9C /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C96CC238ED15700EC3A9C /* NetworkDataLoader.swift */; };
+		E30C96CF238F712C00EC3A9C /* URLSession+NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C96CE238F712C00EC3A9C /* URLSession+NetworkDataLoader.swift */; };
+		E30C96D1238F7D8700EC3A9C /* GoodResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C96D0238F7D8700EC3A9C /* GoodResultsData.swift */; };
+		E30C96D3238F7EE800EC3A9C /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C96D2238F7EE800EC3A9C /* MockDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		E30C96C3238EC46A00EC3A9C /* iTunes_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchTests.swift; sourceTree = "<group>"; };
 		E30C96C5238EC46A00EC3A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E30C96CC238ED15700EC3A9C /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
+		E30C96CE238F712C00EC3A9C /* URLSession+NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkDataLoader.swift"; sourceTree = "<group>"; };
+		E30C96D0238F7D8700EC3A9C /* GoodResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodResultsData.swift; sourceTree = "<group>"; };
+		E30C96D2238F7EE800EC3A9C /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,8 @@
 			children = (
 				E30C96C3238EC46A00EC3A9C /* iTunes_SearchTests.swift */,
 				E30C96C5238EC46A00EC3A9C /* Info.plist */,
+				E30C96D0238F7D8700EC3A9C /* GoodResultsData.swift */,
+				E30C96D2238F7EE800EC3A9C /* MockDataLoader.swift */,
 			);
 			path = "iTunes SearchTests";
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E30C96CC238ED15700EC3A9C /* NetworkDataLoader.swift */,
+				E30C96CE238F712C00EC3A9C /* URLSession+NetworkDataLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 			files = (
 				46BF02452117E36400A24DE5 /* ResultType.swift in Sources */,
 				46BF02412117DC5200A24DE5 /* SearchResultController.swift in Sources */,
+				E30C96CF238F712C00EC3A9C /* URLSession+NetworkDataLoader.swift in Sources */,
 				46BF02472117E37000A24DE5 /* HTTPMethod.swift in Sources */,
 				46BF02432117E01600A24DE5 /* ItunesSearchTableViewController.swift in Sources */,
 				46BF023F2117D8FB00A24DE5 /* SearchResult.swift in Sources */,
@@ -275,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E30C96C4238EC46A00EC3A9C /* iTunes_SearchTests.swift in Sources */,
+				E30C96D1238F7D8700EC3A9C /* GoodResultsData.swift in Sources */,
+				E30C96D3238F7EE800EC3A9C /* MockDataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
